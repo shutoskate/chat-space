@@ -29,9 +29,9 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
-- has_many :message
+- has_many :messages
 - has many :groups_users
 - has_many :group, through: :groups_users
 
@@ -39,20 +39,21 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|
-|body|text|null: false|
+|body|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- timestamps null: false
-- belongs_to :users
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 ### Association
-- has many users 
 - has many users, through: :groups_users
+- has_many :groups_users
+- has many :messages
 
 ## groups_usersテーブル
 
@@ -64,3 +65,4 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+- 
