@@ -2,6 +2,7 @@
   .side-bar__top
     .side-bar__top__user-name
       %p  name
+      = current_user.name #ログイン時のユーザー名の表記の為
       .side-bar__top__user-name__icons
         %ul.side-bar__top__user-name__icons__items
           = link_to "#" do
