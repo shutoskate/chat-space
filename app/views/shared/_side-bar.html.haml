@@ -1,0 +1,20 @@
+.side-bar
+  .side-bar__top
+    .side-bar__top__user-name
+      %p  name
+      = current_user.name #ログイン時のユーザー名の表記の為
+      .side-bar__top__user-name__icons
+        %ul.side-bar__top__user-name__icons__items
+        = link_to new_group_path do
+          %li.far.fa-edit.fa-1x
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: 'icon')
+  .side-bar__under
+    - current_user.groups.each do |group| #users.groupテーブルから取り出している
+      .side-bar__under__area
+        = link_to group_messages_path(group) do 
+          %p.side-bar__under__area-group
+            = group.name
+          %p.side-bar__under__area-message
+            メッセージはまだありません。
+
