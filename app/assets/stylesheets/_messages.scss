@@ -8,11 +8,33 @@
   display: flex;
 }
 
-.side-bar{
+.header{
   height: 100vh;
   width: 300px;
   background-color: #253141;
-  &__under{
+  .top{
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    .user-area{
+      display: flex;
+      width: 100%;  
+      justify-content: space-between;
+      color: white;
+      .far.fa-edit{
+        color: #ffffff;
+      }
+      .fas.fa-cog{
+        color: #ffffff;
+      }
+      .icons{
+        width: 60px;
+        text-align: right;
+        }
+      }     
+    }   
+  .bottoms{
     height: calc(100vh - 100px);
     padding: 20px 20px;
     display: flex;
@@ -20,7 +42,7 @@
     background-color: #2f3e51;
     box-sizing: border-box;
 
-    &__area{
+    .bottom{
       height: 65px;
       margin-bottom: 40px;
 
@@ -33,63 +55,42 @@
         font-size: 11px;
         color: #ffffff;
       }
+     }
     }
-  }
-
-  &__top{
-    height: 100px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    &__user-name{
-      display: flex;
-      width: 100%;  
-      justify-content: space-between;
-      color: white;
-      .far.fa-edit{
-        color: #ffffff;
-      }
-      .fas.fa-cog{
-        color: #ffffff;
-      }
-      &__icons{
-        width: 60px;
-        text-align: right;
-        }
-      }     
-    }   
-  }
+   }
 
 .chat-main{
   height: 100vh;
   width: calc(100vw - 300px);
-  background-color: #ffffff;
-  &__group-info{
+  
+  .group-info{
     height: 100px;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
-    &__group-area{
+    position: relative;
+    background-color: #ffffff;
+    .group-area{
       width: 296.75px;
       height: 100%;
       padding-top: 35px;
-      &__name{
+      .group__name{
         font-size: 20px;
         margin-bottom: 15px;
 
       }
-      &__member{
+      .member{
         font-size: 12px;
         color: #999999;
         display: inline;
-        &__members{
-          font-size: 12px;
-          color: #999999;
-          display: inline-block;
-        }
+      }
+      .members-name{
+        font-size: 12px;
+        color: #999999;
+        display: inline-block;
       }
     }
-    &__edit{
+    .edit{
     width: 72.72px;
     height: 40px;
     line-height: 40px;
@@ -101,65 +102,84 @@
     color: #38aef0;
     }
   }
-  &__message-list{
-     height: calc(100vh - 190px);
-     background-color: #fafafa;
-     padding: 35px 40px;
-     &__message{
-       padding-bottom: 46px;
-       &__upper{
+  &__message{ //main header  
+    padding: 46px 40px;
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    overflow: scroll;
+
+  }
+  .message{ //message
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 46px 40px;
+    .list{
+      padding-bottom: 40px;
+      
+      .upper{
         padding-bottom: 12px;
-        &__top{
+       
+        .name{
           color: #333333;
           font-size: 16px;
           display: inline-block;
+           // chat-main__message-list__message__upper__top
         }
-        &__text{
+        .text{
           color: #999999;
           font-size: 12px;
           display: inline-block;
         }
-       }
-       &__post{
-         color: #434a54;
-         font-size: 14px;
-       }
-     }   
+      }
+     
+      .post{
+        color: #434a54;
+        font-size: 14px;
+      }
+    }   
   }
-
   &__message-form{
     height: 90px;
-    background-color: #dddddd;
-    display: flex;
-    padding: 20px 40px;
+    background-color: #d2d2d2;
+    padding: 10px 40px;
+    position: relative;
+    
     &__input-box{
+    width: calc( 100% - 150px);
     padding: 0 10px;
     height: 50px;
-    width: 955px;
-    background-color:#ffffff;
     line-height: 50px;
     color: #434a54;
 
-      &__image{
+      &__text{
+        width: 100%;
         position: absolute;
-        right: 170px;
-        bottom: 33px;
-        font-size: 1.2em;
-        .hoge{
-          display: none;
+        right: 30px;
+        top: 20px;
+        background-color:#ffffff;
+
+        &__image{
+          position: absolute;
+          right: 170px;
+          font-size: 1.2em;
+           .hidden{
+              display: none;
+            }
         }
       }
-    }
-    &__send{
-    height: 50px;
-    width: 100px;
-    margin-left: 15px;
-    color: white;
-    line-height: 50px;
-    text-align: center;
-    background-color:#38aef0;
+      &__send{
+        padding: 0 30px;
+        height: 50px;
+        width: 100px;
+        margin-left: 15px;
+        color: white;
+        background-color:#38aef0;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+
+        }
     }
   }
-
 }
 
