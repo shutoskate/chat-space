@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params) #保存処理ができた場合、できなかった場合で分ける。処理が成功ならrootへ　失敗ならeditのビューへいく設定
+    if current_user.update(user_params) #保存処理ができた場合、できなかった場合で分ける。処理が成功ならrootへ失敗ならeditのビューへいく設定
       redirect_to root_path
     else
       render :edit
