@@ -35,7 +35,6 @@ $(function(){
      </p>
      </div>`;//メッセージに画像が含まれない場合のHTMLを作る
     }
-    //console.log(html)
     return html
   }
   $("#new_message").on("submit", function(e){
