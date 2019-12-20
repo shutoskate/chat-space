@@ -1,11 +1,11 @@
-.list
+.list{data: {message: {id: "#{message.id}"}}}
    .upper
       %p.name
          = message.user.name
       %p.text   
          = message.created_at.strftime("%Y/%m/%d %H:%M")
    - if message.content.present?
-      %p.post{data: {message: {id: "#{message.id}"}}}
+      %p.post
          = message.content
          = image_tag message.image.url, class: 'input-box__image' if message.image.present?      
 
